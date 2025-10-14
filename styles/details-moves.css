@@ -1,0 +1,33 @@
+.type-normal { background-color: #A8A878 !important; color: white !important; }
+.type-fire { background-color: #F08030 !important; color: white !important; }
+.type-water { background-color: #6890F0 !important; color: white !important; }
+.type-electric { background-color: #F8D030 !important; color: black !important; }
+.type-grass { background-color: #78C850 !important; color: white !important; }
+.type-ice { background-color: #98D8D8 !important; color: black !important; }
+.type-fighting { background-color: #C03028 !important; color: white !important; }
+.type-poison { background-color: #A040A0 !important; color: white !important; }
+.type-ground { background-color: #E0C068 !important; color: black !important; }
+.type-flying { background-color: #A890F0 !important; color: white !important; }
+.type-psychic { background-color: #F85888 !important; color: white !important; }
+.type-bug { background-color: #A8B820 !important; color: white !important; }
+.type-rock { background-color: #B8A038 !important; color: white !important; }
+.type-ghost { background-color: #705898 !important; color: white !important; }
+.type-dragon { background-color: #7038F8 !important; color: white !important; }
+.type-dark { background-color: #705848 !important; color: white !important; }
+.type-steel { background-color: #B8B8D0 !important; color: black !important; }
+.type-fairy { background-color: #EE99AC !important; color: black !important; }
+
+.type-badge, .category-badge {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    min-width: 100px; /* Add this for consistent width */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Ensure consistent box sizing */
+}
+
+.type-physical { background-color: #ff5959 !important; color: white !important;}
+.type-special { background-color: #5a7fff !important; color: white !important;}
+.type-status { background-color: #8f8f8f !important; color: white !important;}

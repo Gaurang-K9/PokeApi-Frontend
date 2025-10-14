@@ -1,0 +1,22 @@
+.pokemon-card {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background-color: #f8f9fa; /* Slightly darken card itself */
+}
+
+.pokemon-img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.pokemon-img.loaded {
+    opacity: 1;
+}

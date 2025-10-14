@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/pokeball.svg">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../styles/details-pokemon.css">
+  <title>Pokémon Details</title>
+</head>
+<body>
+<div class="container mt-4" id="pokemon-details">
+    <!-- Header Section -->
+    <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+            <div class="d-flex align-items-center gap-3">
+                <h1 id="pokemon-name" class="display-4 text-capitalize mb-0"></h1>
+                <span id="pokedex-number" class="badge bg-primary fs-5">#000</span>
+            </div>
+            <div id="pokemon-types" class="mt-2"></div>
+        </div>
+    </div>
+
+    <!-- Remove this inner container and move the row directly -->
+    <div class="row align-items-start mt-0"> <!-- Changed from mt-4 to mt-0 -->
+        <!-- Pokémon Sprite - 50% -->
+        <div class="col-lg-6 col-md-6 text-center mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body p-4">
+                    <img id="pokemon-sprite" src="" alt="pokemon-sprite" class="img-fluid" style="max-height: 320px;">
+                </div>
+            </div>
+            <button id="shiny-toggle" class="btn btn-outline-warning btn-sm mt-3">
+                <i class="bi bi-stars"></i> Toggle Shiny
+            </button>
+        </div>
+
+        <!-- Pokédex Data - 50% -->
+        <div class="col-lg-6 col-md-6">
+            <div class="card h-100 shadow">
+                <div class="card-header bg-info text-white">
+                    <h4 class="card-title mb-0"><i class="bi bi-journal-text"></i> Pokédex Entry</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-1">Species</h6>
+                        <span id="pokemon-species" class="fs-5 fst-italic text-dark">Loading...</span>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-1">Height</h6>
+                        <span id="pokemon-height" class="fs-5 fst-italic text-dark">Loading...</span>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-1">Weight</h6>
+                        <span id="pokemon-weight" class="fs-5 fst-italic text-dark">Loading...</span>
+                    </div>
+                    <div>
+                        <h6 class="text-muted mb-1">Pokédex Entry</h6>
+                        <p id="pokedex-description" class="fs-6 fst-italic text-dark mb-0" style="line-height: 1.6;">
+                            Loading Pokédex entry...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="row mt-4"> <!-- Added mt-4 here instead -->
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0"><i class="bi bi-graph-up"></i> Base Stats</h3>
+                </div>
+                <div class="card-body">
+                    <!-- ... rest of your stats code ... -->
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>HP</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="hp-bar" class="progress-bar bg-success" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Attack</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="atk-bar" class="progress-bar bg-danger" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Defense</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="def-bar" class="progress-bar bg-info" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Special Attack</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="sp-atk-bar" class="progress-bar bg-warning" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Special Defense</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="sp-def-bar" class="progress-bar bg-purple" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-flex justify-content-between">
+                            <span>Speed</span>
+                            <span class="stat-value fw-bold">0</span>
+                        </label>
+                        <div class="progress" style="height: 8px;">
+                            <div id="spd-bar" class="progress-bar bg-secondary" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <label class="form-label d-flex justify-content-between fs-5">
+                            <strong>Base Stat Total</strong>
+                            <strong id="bst-total" class="text-primary">0</strong>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abilities Section -->
+        <div class="col-lg-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0"><i class="bi bi-lightning-charge"></i> Abilities</h3>
+                </div>
+                <div class="card-body">
+                    <div id="abilities-list" class="row g-2">
+                        <!-- Ability cards will be dynamically added -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Moves Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h3 class="card-title mb-0"><i class="bi bi-controller"></i> Moves</h3>
+                </div>
+                <div class="card-body">
+                    <div id="moves-container" class="row g-2">
+                        <!-- Move elements will be dynamically added -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>  
+  <script src="../javascript/details-pokemon.js"></script>
+</body>
+</html>
