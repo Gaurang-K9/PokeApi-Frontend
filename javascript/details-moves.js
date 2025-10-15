@@ -32,8 +32,11 @@ const displayMoveDetails = (moveData) => {
     document.getElementById('move-accuracy').textContent = moveData.accuracy ? `${moveData.accuracy}%` : '∞';
     document.getElementById('move-priority').textContent = moveData.priority || '-';
     
-    // Update effect
-    const effect = moveData.effect_entries?.find(e => e.language.name === 'en')?.effect || 'No effect description available.';
+    // Update effect - Try effect_entries first, then flavor_text_entries
+    const effectEntry = moveData.effect_entries?.find(e => e.language.name === 'en');
+    const flavorEntry = moveData.flavor_text_entries?.find(e => e.language.name === 'en');
+    
+    const effect = effectEntry ? effectEntry.effect : flavorEntry ? flavorEntry.flavor_text : 'No effect description available.';
     document.getElementById('move-effect-text').textContent = effect.replace(/\n/g, ' ');
     
     // Update additional details (only the essential ones)
