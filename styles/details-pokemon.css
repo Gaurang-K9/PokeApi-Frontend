@@ -81,3 +81,31 @@
     letter-spacing: 0.5px;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Pokémon Sprite Loading Animation */
+.pokemon-sprite-container {
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon-sprite {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    width: auto;
+    object-fit: contain;
+}
+
+.pokemon-sprite.loaded {
+    opacity: 1;
+}
+
+/* Optional: Smooth hover effect for the card */
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
